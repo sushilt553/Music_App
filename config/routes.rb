@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root to: "static_pages#root"
 
+  resources :bands, only: [:index, :new, :create, :edit, :update, :show, :destroy]
+
   resources :users, only: [:new, :create]
 
   resource :session, only: [:new, :create, :destroy]
