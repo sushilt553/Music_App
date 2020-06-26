@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         )
 
         if user
-            
+            log_in_user(user)
         else
             flash[:errors] = ["Username/Password didn't match"]
             render :new
@@ -19,5 +19,6 @@ class SessionsController < ApplicationController
     end
 
     def destroy
+        log_out_user
     end
 end
