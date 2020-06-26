@@ -38,6 +38,15 @@ class BandsController < ApplicationController
     end
 
     def destroy
+        @band = Band.find_by(id: params[:id])
+
+        if @band
+            @band.destroy
+            redirect_to bands_url
+        else
+            flash[:errors] = ["Band not found"]
+            redirect_to bands_url
+        end
     end
 
     private
