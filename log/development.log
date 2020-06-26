@@ -1550,3 +1550,58 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 180ms (Views: 179.4ms | ActiveRecord: 0.0ms)
 
 
+Started POST "/session" for ::1 at 2020-06-26 16:49:34 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"DNAzb/G8Uc9f4UlZLOBb448mmjB29NIfRYW4zBmTCvyNLwvOcKQMWShDpSk2ypcl9d9oRxzNjBcuTmNPuAX+6A==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+Started POST "/session" for ::1 at 2020-06-26 16:49:34 -0400
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 211ms (ActiveRecord: 6.7ms)
+
+
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"DNAzb/G8Uc9f4UlZLOBb448mmjB29NIfRYW4zBmTCvyNLwvOcKQMWShDpSk2ypcl9d9oRxzNjBcuTmNPuAX+6A==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 163ms (ActiveRecord: 3.3ms)
+
+
+Started POST "/session" for ::1 at 2020-06-26 16:49:36 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"DNAzb/G8Uc9f4UlZLOBb448mmjB29NIfRYW4zBmTCvyNLwvOcKQMWShDpSk2ypcl9d9oRxzNjBcuTmNPuAX+6A==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 188ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/session" for ::1 at 2020-06-26 16:49:38 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"DNAzb/G8Uc9f4UlZLOBb448mmjB29NIfRYW4zBmTCvyNLwvOcKQMWShDpSk2ypcl9d9oRxzNjBcuTmNPuAX+6A==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 193ms (ActiveRecord: 2.7ms)
+
+
+Started POST "/session" for ::1 at 2020-06-26 16:49:42 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"DNAzb/G8Uc9f4UlZLOBb448mmjB29NIfRYW4zBmTCvyNLwvOcKQMWShDpSk2ypcl9d9oRxzNjBcuTmNPuAX+6A==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 180ms (ActiveRecord: 0.9ms)
+
+
+Started POST "/session" for ::1 at 2020-06-26 16:49:52 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"DNAzb/G8Uc9f4UlZLOBb448mmjB29NIfRYW4zBmTCvyNLwvOcKQMWShDpSk2ypcl9d9oRxzNjBcuTmNPuAX+6A==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 79ms (Views: 64.2ms | ActiveRecord: 4.5ms)
+
+
