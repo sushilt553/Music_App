@@ -9,7 +9,7 @@ class BandsController < ApplicationController
         @band = Band.find_by(id: params[:id])
 
         if @band
-            redirect_to band_url(@band)
+            render :show
         else
             flash[:errors] = ["Band not found"]
             redirect_to bands_url
@@ -38,5 +38,10 @@ class BandsController < ApplicationController
     end
 
     def destroy
+    end
+
+    private
+    def band_params
+        params.require(:band).permit(:name)
     end
 end
