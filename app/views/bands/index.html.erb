@@ -2,8 +2,12 @@
 
 <ul>
     <% @bands.each do |band| %>
-        <li><%= band.name %></li>
+        <li><a href="<%= band_url(band) %>"><%= band.name %></a></li>
     <% end%>
 </ul>
 
 <a href="<%= new_band_url %>">Create a new band</a>
+
+<br>
+
+<a href="<%= root_url %>">Home Page</a>
