@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   root to: "static_pages#root"
 
-  resources :bands, only: [:index, :new, :create, :edit, :update, :show, :destroy]
+  resources :bands, only: [:index, :new, :create, :edit, :update, :show, :destroy] do
+    resources :albums, only: [:new]
+  end
+
+  resources :albums, only: [:create, :edit, :update, :destroy, :show]
 
   resources :users, only: [:new, :create]
 
