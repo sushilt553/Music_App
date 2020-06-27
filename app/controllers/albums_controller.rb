@@ -38,6 +38,15 @@ class AlbumsController < ApplicationController
     end
 
     def destroy
+        @album = Album.find_by(id: params[:id])
+
+        if @album
+            @album.destroy
+            redirect_to band_url(@album.band)
+        else
+            flash[:errors] = ["Cannot be deleted"]
+            redirect_to band_url(@album.band)
+        end
     end
 
     private
