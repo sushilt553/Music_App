@@ -8,9 +8,9 @@ class Album < ApplicationRecord
         foreign_key: :band_id,
         class_name: :Band
 
-    after_initialize :set_defaults
+    # after_initialize :set_defaults
 
-    def set_defaults
-        self.live ||= false
-    end
+    # def set_defaults
+    #     self.live ||= false
+    # end
 end

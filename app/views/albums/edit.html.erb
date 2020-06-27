@@ -26,7 +26,7 @@
         name="album[live]" 
         id="true" 
         value="t"
-        <%= @album.live ? "checked" : "" %>
+        <%= "checked" if @album.live %>
     >
     <label for="true">Yes</label>
 
@@ -34,8 +34,8 @@
         type="radio"
         name="album[live]" 
         id="false" 
-        value=""
-        <%= !@album.live ? "checked" : ""%>
+        value="false"
+        <%= "checked" if !@album.live%>
     >
     <label for="false">No</label>
     <br>
