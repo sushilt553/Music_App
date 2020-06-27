@@ -22,9 +22,12 @@ class AlbumsController < ApplicationController
     end
 
     def edit
+        @album = Album.find_by(id: params[:id])
+        render :edit
     end
 
     def update
+        @album = 
     end
 
     def destroy
