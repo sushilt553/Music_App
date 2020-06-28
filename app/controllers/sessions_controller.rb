@@ -10,10 +10,13 @@ class SessionsController < ApplicationController
             params[:user][:password]
         )
 
-        if user
+        if user && user.activated
             log_in_user(user)
+        elsif user && !user.activated
+            flash.now[:errors] = ["Activation required"]
+            render :new
         else
-            flash[:errors] = ["Username/Password didn't match"]
+            flash.now[:errors] = ["Username/Password didn't match"]
             render :new
         end
     end
