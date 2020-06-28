@@ -1,0 +1,54 @@
+<% if type == "Edit"%>
+    <% submit = "Update track"%>
+    <% action = track_url(track)%>
+<% else %>
+    <% submit = "Create track"%>
+    <% action = tracks_url %>
+<% end %>
+
+<form action="<%= action %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <% if type == "Edit"%>
+    <input type="hidden" name="_method" value="patch">
+    <% end %>
+
+    <label for="name">Name:</label>
+    <input type="text" name="track[name]" id="name" value=<%= track.name %>>
+    <br>
+    <label for="ord">Track Number:</label>
+    <input type="number" id="ord" name="track[ord]" value=<%= track.ord %>>
+    <br>
+    <label for="album">Album</label>
+    <select name="track[album_id]" id="album">
+    <% Album.all.each do |album| %>
+        <option 
+            value="<%= album.id %>"
+            <%= album.id == track.album.id ? "selected" : "" %>
+        ><%= album.name %></option>
+    <% end %>
+    </select>
+    <br>
+    <label for="regular">Regular:</label>
+    <input 
+    type="radio" 
+    id="regular" 
+    value="false" 
+    name="track[bonus]"
+    <%= "checked" if track.bonus %>
+    >
+
+    <label for="bonus">Bonus:</label>
+    <input 
+    type="radio" 
+    id="bonus" 
+    value="true"
+    name="track[bonus]"
+    <%= "checked" if !track.bonus %>
+    >
+    <br>
+    <label for="lyrics">Lyrics:</label>
+    <textarea name="track[lyrics]" id="lyrics" ><%= track.lyrics %></textarea>
+    <br>
+    <input type="submit" value=<%= submit %>>
+</form>
