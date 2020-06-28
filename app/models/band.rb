@@ -8,4 +8,7 @@ class Band < ApplicationRecord
         class_name: :Album,
         dependent: :destroy
 
+    has_many :tracks,
+        through: :albums,
+        source: :tracks
 end
