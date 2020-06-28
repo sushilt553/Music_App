@@ -7,6 +7,7 @@ class User < ApplicationRecord
     attr_reader :password
 
     after_initialize :ensure_session_token
+    after_initialize :ensure_activation_token
 
     has_many :notes,
         primary_key: :id,
@@ -38,8 +39,17 @@ class User < ApplicationRecord
         self.save
     end
 
+    def activate!
+        self.activated = true
+        self.save
+    end
+
     private
     def ensure_session_token
         self.session_token ||= User.generate_session_token
+    end
+
+    def ensure_activation_token
+        self.activation_token ||= User.generate_session_token
     end
 end
