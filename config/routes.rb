@@ -15,7 +15,11 @@ Rails.application.routes.draw do
 
   resources :notes, only: [:create, :destroy]
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create] do
+    collection do
+      get 'activate'
+    end
+  end
 
   resource :session, only: [:new, :create, :destroy]
 end
