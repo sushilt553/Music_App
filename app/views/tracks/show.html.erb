@@ -34,7 +34,7 @@
     <%= note.content %>
     <p>Noted by: <%= note.user.username %></p>
     </li>
-    <% if current_user.id == note.user.id %>
+    <% if current_user.id == note.user_id %>
     <form action="<%= note_url(note) %>" method="post">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <input type="hidden" name="_method" value="delete">
