@@ -46,6 +46,15 @@ class TracksController < ApplicationController
     end
 
     def destroy
+        @track = Track.find_by(id: params[:id])
+
+        if @track
+            @track.destroy
+            redirect_to album_url(@track.album)
+        else
+            flash[:errors] = ["Track not found"]
+            redirect_to root_url
+        end
     end
 
     private
