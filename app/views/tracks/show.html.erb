@@ -15,4 +15,15 @@
     <input type="submit" value="Delete">
 </form>
 <br>
+<form action="<%= notes_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <label for="content">Notes:</label>
+    <textarea name="note[content]" id="content"></textarea>
+
+    <input type="hidden" name="note[track_id]" value=<%= @track.id %>>
+
+    <input type="submit" value="Add a Note">
+</form>
+<br>
 <a href="<%= album_url(@track.album) %>">Back to albums</a>
