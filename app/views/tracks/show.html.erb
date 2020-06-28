@@ -27,3 +27,12 @@
 </form>
 <br>
 <a href="<%= album_url(@track.album) %>">Back to albums</a>
+
+<ul>
+    <% @track.notes.each do |note| %>
+    <li>
+    <%= note.content %>
+    <p>Noted by: <%= note.user.username %></p>
+    </li>
+    <% end %>
+</ul>
