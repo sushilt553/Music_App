@@ -10163,3 +10163,17 @@ Processing by TracksController#new as HTML
 Completed 200 OK in 92ms (Views: 59.1ms | ActiveRecord: 30.8ms)
 
 
+Started GET "/albums/23/tracks/new" for ::1 at 2020-06-28 15:29:44 -0400
+Processing by TracksController#new as HTML
+  Parameters: {"album_id"=>"23"}
+  [1m[36mAlbum Load (2.8ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/tracks_controller.rb:4
+  Rendering tracks/new.html.erb within layouts/application
+  [1m[36mAlbum Load (13.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/tracks/new.html.erb:14
+  Rendered tracks/new.html.erb within layouts/application (20.6ms)
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 122ms (Views: 100.7ms | ActiveRecord: 19.0ms)
+
+

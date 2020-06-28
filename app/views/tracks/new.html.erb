@@ -5,10 +5,10 @@
 
     <label for="name">Name:</label>
     <input type="text" name="track[name]" id="name">
-
+    <br>
     <label for="ord">Track Number:</label>
     <input type="number" id="ord">
-
+    <br>
     <label for="album">Album</label>
     <select name="track[album_id]" id="album">
     <% Album.all.each do |album| %>
@@ -18,9 +18,9 @@
         ><%= album.name %></option>
     <% end %>
     </select>
-
+    <br>
     <label for="lyrics">Lyrics:</label>
     <textarea name="track[lyrics]" id="lyrics" ></textarea>
-
+    <br>
     <input type="submit" value="Create track">
 </form>
