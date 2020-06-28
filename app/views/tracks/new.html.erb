@@ -7,7 +7,7 @@
     <input type="text" name="track[name]" id="name">
     <br>
     <label for="ord">Track Number:</label>
-    <input type="number" id="ord">
+    <input type="number" id="ord" name="track[ord]">
     <br>
     <label for="album">Album</label>
     <select name="track[album_id]" id="album">
@@ -18,6 +18,12 @@
         ><%= album.name %></option>
     <% end %>
     </select>
+    <br>
+    <label for="regular">Regular:</label>
+    <input type="radio" id="regular" value="false" name="track[bonus]">
+
+    <label for="bonus">Bonus:</label>
+    <input type="radio" id="bonus" value="true" name="track[bonus]">
     <br>
     <label for="lyrics">Lyrics:</label>
     <textarea name="track[lyrics]" id="lyrics" ></textarea>
