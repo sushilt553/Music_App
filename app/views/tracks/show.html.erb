@@ -6,5 +6,6 @@
     <li>Bonus: <%= @track.bonus %></li>
     <li>Lyrics: <%= @track.lyrics %></li>
 </ul>
-
+<a href="<%= edit_track_url(@track) %>">Edit</a>
+<br>
 <a href="<%= album_url(@track.album) %>">Back to albums</a>
