@@ -9986,3 +9986,57 @@ Migrating to CreateTracks (20200628185507)
   ↳ bin/rails:9
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4505726345591715405)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveIndex (20200628190316)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (7.9ms)[0m  [1m[35mDROP INDEX  "index_tracks_on_album_id_and_title_and_ord"[0m
+  ↳ db/migrate/20200628190316_remove_index.rb:3
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_tracks_on_album_id_and_ord" ON "tracks"  ("album_id", "ord")[0m
+  ↳ db/migrate/20200628190316_remove_index.rb:4
+  [1m[35m (5.9ms)[0m  [1m[35mALTER TABLE "tracks" DROP COLUMN "title"[0m
+  ↳ db/migrate/20200628190316_remove_index.rb:5
+  [1m[35m (2.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4505726345591715405)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4505726345591715405)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveIndex (20200628190316)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mDROP INDEX  "index_tracks_on_album_id_and_title_and_ord"[0m
+  ↳ db/migrate/20200628190316_remove_index.rb:3
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_tracks_on_album_id_and_ord" ON "tracks"  ("album_id", "ord")[0m
+  ↳ db/migrate/20200628190316_remove_index.rb:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "tracks" DROP COLUMN "title"[0m
+  ↳ db/migrate/20200628190316_remove_index.rb:5
+  [1m[35m (7.7ms)[0m  [1m[35mALTER TABLE "tracks" ADD "name" character varying NOT NULL[0m
+  ↳ db/migrate/20200628190316_remove_index.rb:6
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "tracks" DROP COLUMN "lyrics"[0m
+  ↳ db/migrate/20200628190316_remove_index.rb:7
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "tracks" ADD "lyrics" text NOT NULL[0m
+  ↳ db/migrate/20200628190316_remove_index.rb:8
+  [1m[35m (7.5ms)[0m  [1m[35mALTER TABLE "tracks" DROP COLUMN "regular"[0m
+  ↳ db/migrate/20200628190316_remove_index.rb:9
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "tracks" ADD "bonus" boolean DEFAULT FALSE NOT NULL[0m
+  ↳ db/migrate/20200628190316_remove_index.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200628190316"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4505726345591715405)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
