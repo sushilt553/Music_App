@@ -1,4 +1,5 @@
 class NotesController < ApplicationController
+    before_action :require_login
 
     def create
         @note = Note.new(note_params)
@@ -13,6 +14,9 @@ class NotesController < ApplicationController
     end
 
     def destroy
+        @note = current_user.notes.find_by(id: params[:id])
+        @note.destroy
+        redirect_to track_url(@note.track)
     end
 
     private
